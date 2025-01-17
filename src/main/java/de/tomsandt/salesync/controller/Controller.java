@@ -8,7 +8,7 @@ public class Controller {
 
     @GetMapping("/")
     public String test() {
-        return "Dashboard-SaleSync";
+        return "Dashboard-SaleSync1";
     }
 
 }
