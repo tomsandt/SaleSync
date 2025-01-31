@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: SaleSync Frontend API
+  version: 1.0.0
+
+paths:
+  /frontend/v1/customers:
+    get:
+      tags:
+        - Frontend
+      summary: Returns information about the customer
+      responses:
+        '200':
+          description: customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customers'
+  
+  /frontend/v1/articles:
+    put:
+      tags:
+        - Frontend
+      summary: edit an existing article
+      responses:
+        '200':  
+          description: 
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/articles'
+    delete: 
+      tags:
+        - Frontend
+      summary: delete an existing article
+      responses:
+        '200':
+          description:  
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/articles'
+    post: 
+      tags:
+        - Frontend
+      summary: submit a new article
+      responses:
+        '200':
+          description:  
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/articles'
+
+
+
+components:
+  schemas:
+    customers:
+      $ref: './schemas/Schema.yml#/components/schemas/customers'
+    
+    dealers:
+      $ref: './schemas/Schema.yml#/components/schemas/dealers'
+    
+    articles:
+      $ref: './schemas/Schema.yml#/components/schemas/articles'
+    
+    costs:
+      $ref: './schemas/Schema.yml#/components/schemas/costs'
+
+    sales:
+      $ref: './schemas/Schema.yml#/components/schemas/sales'
+
+    
+

@@ -1,0 +1,262 @@
+title: CustomerSchema
+components:
+  schemas:
+    customers:
+      type: object
+      properties:
+        customer_id:
+          type: string
+          format: uuid
+          description: Unique identifier for the customer
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        last_name:
+          type: string
+          description: Last name of the customer
+          example: Sandt
+        first_name:
+          type: string
+          description: First name of the customer
+          example: Tom
+        address:
+          type: object
+          properties:
+            address_street:
+              type: string
+              description: Customer's street name + number
+              example: Holzhauser 4
+            address_PLZ:
+              type: string
+              description: Postal code
+              example: 11111
+            address_city:
+              type: string
+              description: Customer city
+              example: Berlin
+          required:
+            - address_street
+            - address_PLZ
+            - address_city
+        mail_address:
+          type: string
+          format: email
+          description: Email address of the customer
+          example: tom.sandt@telekom.de
+        phone_number:
+          type: string
+          description: Phone number of the customer
+          example: "+4917680435525"
+      required:
+        - customer_id
+        - last_name
+        - first_name
+        - address
+        - mail_address
+        - phone_number
+    
+    dealers:
+      type: object
+      properties:
+        dealer_id:
+          type: string
+          format: uuid
+          description: unique identifier for the dealer 
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        dealer_type:
+          type: string
+          enum:
+            - private
+            - commercial
+          description: 
+        name: 
+          type: string
+          description:
+          example: Ebay
+        address:
+          type: object
+          properties:
+            address_street:
+              type: string
+              description: Customer's street name + number
+              example: Holzhauser 4
+            address_PLZ:
+              type: string
+              description: Postal code
+              example: 11111
+            address_city:
+              type: string
+              description: Customer city
+              example: Berlin
+          required:
+            - address_street
+            - address_PLZ
+            - address_city
+        mail_address:
+          type: string
+          description: E-Mail of the dealer
+          example: ebay@ebay.com
+        phone_number:
+          type: string
+          description: 
+          example: #4917680435525  
+      required:
+        - dealer_id
+        - dealer_type
+        - name
+        - address
+        - mail_address
+        - phone_number
+        
+    articles:
+      type: object
+      properties:
+        article_id:
+          type: string
+          format: uuid
+          description:
+          example:
+        article_type:
+          type: string
+          enum:
+            - electronic
+            - ticket
+            - toy
+            - clothing
+            - other
+          description:
+        dealer_id:
+          type: string
+          description:
+        name: 
+          type: string
+          description:
+          example:
+        description:
+          type: string
+          description:
+      required:
+        - article_id
+        - article_type
+        - dealer_id
+        - name
+        - description
+
+    costs:
+      type: object
+      properties:
+        expenditure_id:
+          type: string
+          format: uuid
+          description:
+          example:
+        expenditure_type:
+          type: string
+          enum:   
+            - license
+            - packaging
+            - product
+            - other
+          description:
+        article_id:
+          type: string
+          description:
+        cost_status:
+          type: string
+          enum:
+            - delivered
+            - other
+          description:
+        amount:
+          type: integer
+          description:
+          example:
+        date: 
+          type: localDate
+          format: localDate
+          example:
+          description:
+        net_price:
+          type: number
+          format: float
+          description:
+          example:
+        shipping:
+          type: number
+          format: float
+          description:
+          example:
+        tax:
+          type: number
+          format: float
+          description:
+          example:
+      required:
+        - expenditure_id
+        - expenditure_type
+        - article_id
+        - cost_status
+        - amount
+        - date
+        - net_price
+        - shipping
+        - tax
+
+    sales: 
+      type: object
+      properties: 
+        costumer_id:
+          type: string
+          format: uuid
+          description:
+          example:
+        article_id:
+          type: string
+          format: uuid
+          description:
+          example:
+        status:
+          type: string
+          enum: 
+            - returned
+            - other
+          description:
+        amount:
+          type: integer
+          description:
+          example:
+        date: 
+          type: localDate
+          format: localDate
+          description:
+          example:
+        price: 
+          type: number
+          format: float
+          description:
+          example:
+        fee:
+          type: number
+          format: float
+          description:
+          example:
+        tax:
+          type: number
+          format: float
+          description:
+          example:
+      required:
+        - customer_id
+        - article_id
+        - status
+        - amount
+        - date
+        - price
+        - shipping
+        - fee
+        - tax
+
+    
+
+
+
+
+
