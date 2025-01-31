@@ -1,35 +1,51 @@
-HELP.md
+#Maven
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+.git-versioned-pom.xml
+/.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+# Eclipse
 .project
-.settings
-.springBeans
-.sts4-cache
+.classpath
+.settings/
+bin/
 
-### IntelliJ IDEA ###
+# IntelliJ
 .idea
-*.iws
-*.iml
 *.ipr
+*.iml
+*.iws
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-!frontend/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!frontend/build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# NetBeans
+nb-configuration.xml
 
-### VS Code ###
-.vscode/
+# Visual Studio Code
+.vscode
+.factorypath
+
+# OSX
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Local environment
+.env
+logs/
+
+# accapo-frontend
+node_modules
+node
+frontend/build
+frontend/tsconfig.app.tsbuildinfo
+frontend/tsconfig.node.tsbuildinfo
+frontend/.vite/deps/_metadata.json
+frontend/.vite/deps/package.json
