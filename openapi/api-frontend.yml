@@ -16,26 +16,70 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/customers'
-  
+    put:
+      tags:
+        - Frontend
+      summary: edits information about the customer
+      responses:
+        '200':
+          description: customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customers'
+    delete:
+      tags:
+        - Frontend
+      summary: deletes information about the customer
+      responses:
+        '200':
+          description: customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customers'
+    post:
+      tags:
+        - Frontend
+      summary: submit a new customer
+      responses:
+        '200':
+          description: customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customers'
+
   /frontend/v1/articles:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about a article
+      responses:
+        '200':  
+          description: articles
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/articles'
     put:
       tags:
         - Frontend
       summary: edit an existing article
       responses:
         '200':  
-          description: 
+          description: articles
           content:
             application/json:
               schema: 
-                $ref: '#/components/schemas/articles'
+                $ref: '#/components/schemas/articles'            
     delete: 
       tags:
         - Frontend
       summary: delete an existing article
       responses:
         '200':
-          description:  
+          description: articles
           content:
             application/json:
               schema: 
@@ -46,12 +90,188 @@ paths:
       summary: submit a new article
       responses:
         '200':
-          description:  
+          description: articles
           content:
             application/json:
               schema: 
                 $ref: '#/components/schemas/articles'
 
+  /frontend/v1/costs:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about all purchases
+      responses:
+        '200':  
+          description: costs
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/costs'           
+    post: 
+      tags:
+        - Frontend
+      summary: submit a new purchase
+      responses:
+        '200':
+          description: costs
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/costs'
+
+  /frontend/v1/costs/{article_id}:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about one purchase
+      responses:
+        '200':  
+          description: costs
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/costs' 
+    delete: 
+      tags:
+        - Frontend
+      summary: delete an existing purchase
+      responses:
+        '200':
+          description: costs
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/costs'
+    put:
+      tags:
+        - Frontend
+      summary: edit an existing purchase
+      responses:
+        '200':  
+          description: costs
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/costs' 
+
+  /frontend/v1/sales:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about all sales
+      responses:
+        '200':  
+          description: sales
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/sales'           
+    post: 
+      tags:
+        - Frontend
+      summary: submit a new sale
+      responses:
+        '200':
+          description: sales
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/sales'
+
+  /frontend/v1/sales/{sale_id}:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about one sales
+      responses:
+        '200':  
+          description: sales
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/sales'
+    delete: 
+      tags:
+        - Frontend
+      summary: delete an existing sale
+      responses:
+        '200':
+          description: sales
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/sales'
+    put:
+      tags:
+        - Frontend
+      summary: edit an existing sale
+      responses:
+        '200':  
+          description: sales
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/sales' 
+
+  /frontend/v1/dealers:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about a all dealers
+      responses:
+        '200':  
+          description: dealer
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/dealers'           
+    post: 
+      tags:
+        - Frontend
+      summary: submit a new dealer
+      responses:
+        '200':
+          description: dealer
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/dealers'
+
+  /frontend/v1/dealers/{dealer_id}:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about one dealer
+      responses:
+        '200':  
+          description: dealer
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/dealers'
+    delete: 
+      tags:
+        - Frontend
+      summary: delete an existing dealer
+      responses:
+        '200':
+          description: dealer
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/dealers'
+    put:
+      tags:
+        - Frontend
+      summary: edit an existing dealer
+      responses:
+        '200':  
+          description: dealer
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/dealers' 
 
 
 components:
@@ -70,6 +290,3 @@ components:
 
     sales:
       $ref: './schemas/Schema.yml#/components/schemas/sales'
-
-    
-
