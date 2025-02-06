@@ -326,3 +326,9 @@ components:
 
     sales:
       $ref: './schemas/Schema.yml#/components/schemas/sales'
+
+    profits:
+      $ref: './schemas/Schema.yml#/components/schemas/profits'
+
+    savings:
+      $ref: './schemas/Schema.yml#/components/schemas/savings'

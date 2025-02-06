@@ -255,3 +255,95 @@ components:
         - price
         - fee
         - tax
+
+    profits:
+      type: object
+      properties:
+        profit_id:
+          type: string
+          format: uuid
+          description: Unique identifier for the profit entry.
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        article_id:
+          type: string
+          format: uuid
+          description: Unique identifier for the related article.
+          example: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        expenditure_id:
+          type: string
+          format: uuid
+          description: Unique identifier for the related expenditure.
+          example: "731c4b34-20b4-4a8b-821d-bb27cf6c3395"
+        sale_id:
+          type: string
+          format: uuid
+          description: Unique identifier for the related sale.
+          example: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+        purchase_price:
+          type: number
+          format: float
+          description: The price at which the article was purchased.
+          example: 25.50
+        sale_price:
+          type: number
+          format: float
+          description: The price at which the article was sold.
+          example: 50.75
+        profits:  
+          type: number
+          format: float
+          description: The calculated profit from the sale (sale_price - purchase_price).
+          example: 25.25
+      required:
+        - profit_id
+        - article_id
+        - expenditure_id
+        - sale_id
+        - purchase_price
+        - sale_price
+        - profits
+
+    savings:
+      type: object
+      properties:
+        savings_id:
+          type: string
+          format: uuid
+          description: Unique identifier for the savings entry.
+          example: "e19b9f3e-ae97-4c59-91da-3aab3b2dd3ee"
+        month:
+          type: integer
+          description: The month for which the savings are recorded (1-12).
+          example: 3
+        year:
+          type: integer
+          description: The year for which the savings are recorded.
+          example: 2024
+        total_profit:
+          type: number
+          format: float
+          description: The total profit calculated for the specified month and year.
+          example: 5000.75
+        savings_percentage:
+          type: number
+          format: float 
+          description: The percentage of total profit allocated to savings.
+          example: 20.0
+        reserved_founds:
+          type: number
+          format: float
+          description: The absolute amount of profit reserved for savings (total_profit * savings_percentage / 100).
+          example: 1000.15
+        remaining_profit:
+          type: number
+          format: float
+          description: The remaining profit after savings have been deducted.
+          example: 4000.60
+      required:
+        - savings_id
+        - month
+        - year
+        - total_profit
+        - savings_percentage
+        - reserved_founds
+        - remaining_profit
