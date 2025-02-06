@@ -8,7 +8,33 @@ paths:
     get:
       tags:
         - Frontend
-      summary: Returns information about the customer
+      summary: Returns information about all customers
+      responses:
+        '200':
+          description: customer
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/customers'
+    post:
+      tags:
+        - Frontend
+      summary: submit a new customer
+      responses:
+        '200':
+          description: customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customers'
+
+  /frontend/v1/customers/{customer_id}:
+    get:
+      tags:
+        - Frontend
+      summary: Returns information about one customer
       responses:
         '200':
           description: customer
@@ -38,23 +64,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/customers'
-    post:
-      tags:
-        - Frontend
-      summary: submit a new customer
-      responses:
-        '200':
-          description: customer
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/customers'
-
+    
   /frontend/v1/articles:
     get:
       tags:
         - Frontend
-      summary: returns information about a article
+      summary: returns information about all articles
+      responses:
+        '200':  
+          description: articles
+          content:
+            application/json:
+              schema: 
+                type: array
+                items:
+                  $ref: '#/components/schemas/articles'         
+    post: 
+      tags:
+        - Frontend
+      summary: submit a new article
+      responses:
+        '200':
+          description: articles
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/articles'
+
+  /frontend/v1/articles/{articles_id}:
+    get:
+      tags:
+        - Frontend
+      summary: returns information about one article
       responses:
         '200':  
           description: articles
@@ -84,17 +125,6 @@ paths:
             application/json:
               schema: 
                 $ref: '#/components/schemas/articles'
-    post: 
-      tags:
-        - Frontend
-      summary: submit a new article
-      responses:
-        '200':
-          description: articles
-          content:
-            application/json:
-              schema: 
-                $ref: '#/components/schemas/articles'
 
   /frontend/v1/costs:
     get:
@@ -107,7 +137,9 @@ paths:
           content:
             application/json:
               schema: 
-                $ref: '#/components/schemas/costs'           
+                type: array
+                items:
+                  $ref: '#/components/schemas/costs'           
     post: 
       tags:
         - Frontend
@@ -166,7 +198,9 @@ paths:
           content:
             application/json:
               schema: 
-                $ref: '#/components/schemas/sales'           
+                type: array
+                items:
+                  $ref: '#/components/schemas/sales'           
     post: 
       tags:
         - Frontend
@@ -225,7 +259,9 @@ paths:
           content:
             application/json:
               schema: 
-                $ref: '#/components/schemas/dealers'           
+                type: array
+                items:
+                  $ref: '#/components/schemas/dealers'           
     post: 
       tags:
         - Frontend
