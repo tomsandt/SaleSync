@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Customers from "./pages/Customer.jsx";
+import Customer from "./pages/Customer.jsx";
 
 function App() {
   return (
       <Router>
         <Routes>
-          <Route path="/customers" element={<Customers />} />
+          <Route path="/customer" element={<Customer />} />
         </Routes>
       </Router>
   );
