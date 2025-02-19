@@ -3,7 +3,7 @@ import CustomerTable from "../components/CustomerTable";
 import Sidebar from "../components/Sidebar";
 import { Box, Typography, Button, Breadcrumbs, Link } from "@mui/material";
 
-const Customer = () => (
+const Customer = ({pathName}) => (
     <Box sx={{ display: "flex", width: "100vw", height: "100vh", overflow: "hidden" }}>
         <Sidebar />
         <Box component="main" sx={{ flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center", bgcolor: "#F5F5F5", overflow: "hidden", p: 3 }}>
@@ -11,7 +11,7 @@ const Customer = () => (
             <Box sx={{ width: "90%", maxWidth: "1250px", display: "flex", justifyContent: "flex-start", mb: 1 }}>
                 <Breadcrumbs sx={{ fontSize: 14, "& a": { textDecoration: "none", color: "#1E90FF" } }}>
                     <Link href="/">Dashboard</Link>
-                    <Typography color="text.primary">Customer</Typography>
+                    <Typography color="text.primary">{pathName}</Typography>
                 </Breadcrumbs>
             </Box>
 
