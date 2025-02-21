@@ -1,17 +1,25 @@
 package de.tomsandt.salesync.controller;
-
+import de.tomsandt.salesync.repository.db.DbRepo;
 import de.tomsandt.salesync.domain.*;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 @RestController
 @RequestMapping("/frontend")
 public class FrontendController {
 
+    private final DbRepo dbRepo;
+
+    @Autowired
+    public FrontendController(DbRepo dbRepo) {
+        this.dbRepo = dbRepo;
+    }
+
     @GetMapping("/v1/customer")
-    public ResponseEntity<String> getCustomers() {
-        return ResponseEntity.ok("200");
+    public ResponseEntity<List<Customer>> getCustomers() {
+        return ResponseEntity.ok(dbRepo.getAllCustomers());
     }
 
     @PostMapping("/v1/customer")

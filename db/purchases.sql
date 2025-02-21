@@ -1,7 +1,7 @@
-CREATE TABLE Costs (
-    expenditure_id INT PRIMARY KEY,
+CREATE TABLE Purchases (
+    purchase_id INT PRIMARY KEY,
     article_id INT,
-    expenditure_type ENUM('license','packaging','product','other') NOT NULL,
+    type ENUM('license','packaging','product','other') NOT NULL,
     cost_status ENUM('delivered','other') NOT NULL,
     amount INT,
     date DATE,

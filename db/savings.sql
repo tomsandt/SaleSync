@@ -1,9 +1,9 @@
 CREATE TABLE Savings (
-    savings_id INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     month INT,
     year INT,
-    total_profit DECIMAL(10,2),
-    savings_percentage DECIMAL(10,2),
-    reserved_funds DECIMAL(10,2),
-    remaining_profit DECIMAL(10,2)
+    totalProfit DECIMAL(10,2),
+    savingsPercentage DECIMAL(10,2),
+    reservedFunds DECIMAL(10,2),
+    remainingProfit DECIMAL(10,2)
     );

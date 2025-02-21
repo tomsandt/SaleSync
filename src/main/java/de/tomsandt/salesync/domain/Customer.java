@@ -1,7 +1,11 @@
 package de.tomsandt.salesync.domain;
 
-public class Customer {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
+public class Customer {
+    @Id
     private long id;
     private String lastName;
     private String firstName;
