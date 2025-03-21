@@ -12,7 +12,7 @@ public class Customer {
     private String street;
     private String zipCode;
     private String city;
-    private String eMail;
+    private String mail;
     private String phone;
 
     public String getLastName() {
@@ -63,12 +63,12 @@ public class Customer {
         this.city = city;
     }
 
-    public String getEMail() {
-        return eMail;
+    public String getMail() {
+        return mail;
     }
 
-    public void setEMail(String eMail) {
-        this.eMail = eMail;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public String getPhone() {

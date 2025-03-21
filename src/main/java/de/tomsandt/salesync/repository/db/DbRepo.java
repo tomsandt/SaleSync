@@ -25,8 +25,8 @@ public class DbRepo {
         return customerRepository.findById(id);
     }
 
-    public Optional<Customer> getCustomerByEmail(String email) {
-        return Optional.ofNullable(customerRepository.findByEMail(email));
+    public Optional<Customer> getCustomerByEmail(String mail) {
+        return Optional.ofNullable(customerRepository.findByMail(mail));
     }
 
     public Optional<Customer> getCustomerByLastName(String lastName) {
