@@ -23,7 +23,7 @@ public class PurchaseService {
         return purchaseRepository.findById(id);
     }
 
-    public Purchase createPurchase(Purchase purchase, long id){
+    public Purchase createPurchase(Purchase purchase){
 
         purchase.setId(purchase.getId());
         purchase.setType(purchase.getType());

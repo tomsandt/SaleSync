@@ -116,8 +116,8 @@ public class FrontendController {
     }
 
     @PostMapping("/v1/purchase")
-    public ResponseEntity<Purchase> addPurchase(@RequestBody Purchase purchase, long id) {
-        Purchase newPurchase = purchaseService.createPurchase(purchase, id);
+    public ResponseEntity<Purchase> addPurchase(@RequestBody Purchase purchase) {
+        Purchase newPurchase = purchaseService.createPurchase(purchase);
         return new ResponseEntity<>(newPurchase, HttpStatus.CREATED);
     }
 

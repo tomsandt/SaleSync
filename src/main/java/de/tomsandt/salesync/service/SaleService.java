@@ -5,6 +5,7 @@ import de.tomsandt.salesync.domain.Dealer;
 import de.tomsandt.salesync.domain.Sale;
 import de.tomsandt.salesync.repository.db.impl.SaleRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 @Service
 public class SaleService {
 
+    @Autowired
     private SaleRepository saleRepository;
 
     public List<Sale> getAllSales() {
