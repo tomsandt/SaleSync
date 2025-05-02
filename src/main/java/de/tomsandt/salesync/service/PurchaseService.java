@@ -24,17 +24,6 @@ public class PurchaseService {
     }
 
     public Purchase createPurchase(Purchase purchase){
-
-        purchase.setId(purchase.getId());
-        purchase.setType(purchase.getType());
-        purchase.setArticleId(purchase.getArticleId());
-        purchase.setStatus(purchase.getStatus());
-        purchase.setAmount(purchase.getAmount());
-        purchase.setDate(purchase.getDate());
-        purchase.setTax(purchase.getTax());
-        purchase.setShipping(purchase.getShipping());
-        purchase.setPrice(purchase.getPrice());
-
         return purchaseRepository.save(purchase);
     }
 
@@ -43,7 +32,6 @@ public class PurchaseService {
         if(existingPurchase == null){
             throw new EntityNotFoundException("Purchase with id " + id + " not found");
         }
-        existingPurchase.setId(purchase.getId());
         existingPurchase.setType(purchase.getType());
         existingPurchase.setArticleId(purchase.getArticleId());
         existingPurchase.setStatus(purchase.getStatus());

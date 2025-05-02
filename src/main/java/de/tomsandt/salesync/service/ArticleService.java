@@ -24,14 +24,7 @@ public class ArticleService {
     }
 
     public Article createArticle(Article article) {
-        Article newArticle = new Article();
-        newArticle.setId(article.getId());
-        newArticle.setName(article.getName());
-        newArticle.setDescription(article.getDescription());
-        newArticle.setType(article.getType());
-
-        newArticle.setDealerId(article.getDealerId());
-        return articleRepository.save(newArticle);
+        return articleRepository.save(article);
     }
 
     public Article updateArticle(Article article, long id) {

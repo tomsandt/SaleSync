@@ -24,14 +24,6 @@ public class DealerService {
     }
 
     public Dealer createDealer(Dealer dealer) {
-        dealer.setId(dealer.getId());
-        dealer.setCity(dealer.getCity());
-        dealer.setName(dealer.getName());
-        dealer.setStreet(dealer.getStreet());
-        dealer.setZipCode(dealer.getZipCode());
-        dealer.setPhone(dealer.getPhone());
-        dealer.setEMail(dealer.getEMail());
-        dealer.setType(dealer.getType());
         return dealerRepository.save(dealer);
     }
 
@@ -40,7 +32,6 @@ public class DealerService {
         if (excistingDealer == null) {
             throw new EntityNotFoundException("Dealer with id" + id + "not found");
         }
-        excistingDealer.setId(excistingDealer.getId());
         excistingDealer.setCity(excistingDealer.getCity());
         excistingDealer.setName(excistingDealer.getName());
         excistingDealer.setStreet(excistingDealer.getStreet());

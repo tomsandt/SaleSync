@@ -17,18 +17,7 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     public Customer createCustomer(Customer customer) {
-        Customer newCustomer = new Customer();
-
-        newCustomer.setId(customer.getId());
-        newCustomer.setFirstName(customer.getFirstName());
-        newCustomer.setLastName(customer.getLastName());
-        newCustomer.setStreet(customer.getStreet());
-        newCustomer.setCity(customer.getCity());
-        newCustomer.setZipCode(customer.getZipCode());
-        newCustomer.setPhone(customer.getPhone());
-        newCustomer.setMail(customer.getMail());
-
-        return customerRepository.save(newCustomer);
+        return customerRepository.save(customer);
     }
 
     public List<Customer> getAllCustomers(){

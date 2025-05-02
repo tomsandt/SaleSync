@@ -25,17 +25,6 @@ public class SaleService {
     }
 
     public Sale createSale(Sale sale) {
-
-        sale.setId(sale.getId());
-        sale.setArticleId(sale.getArticleId());
-        sale.setCustomerId(sale.getCustomerId());
-        sale.setAmount(sale.getAmount());
-        sale.setDate(sale.getDate());
-        sale.setPrice(sale.getPrice());
-        sale.setStatus(sale.getStatus());
-        sale.setFee(sale.getFee());
-        sale.setTax(sale.getTax());
-
         return saleRepository.save(sale);
     }
 
@@ -44,7 +33,6 @@ public class SaleService {
         if (excistingSale == null){
             throw new EntityNotFoundException("Sale with id " + id + " not found");
         }
-        excistingSale.setId(sale.getId());
         excistingSale.setArticleId(sale.getArticleId());
         excistingSale.setCustomerId(sale.getCustomerId());
         excistingSale.setAmount(sale.getAmount());
